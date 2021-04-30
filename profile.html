@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Study Buddies | Profile</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Study, Chat, Friends, College, School">
+    <meta name="google-signin-client_id" content="231404018205-ns41e7jr23p8regdups02evhp9lk7iq0.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+</head>
+
+<body>
+
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="index.html" style="margin:0px;padding:0px;text-align: center">
+                    <img src="images/logo2.png" alt="logo" style="padding-top: 20px;padding-bottom:20px;width: 250px; height: 55px;"></a>
+            </li>
+            <li><a href="index.html"style="background-color: rgba(62,169,223,0.1);font-weight: bold">Home</a></li>
+            <li id="signedIn" style="display: none"><a href="profile.html">Profile</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <div id="mobile">
+        <ul>
+            <li style="float: right">
+                <a href="index.html" style="padding-top:14px; padding-left: 0px">
+                    <img src="images/logo.png" alt="logo" style="width: 50px; height: 50px">
+                </a>
+            </li>
+            <li style="float: right;">
+                <a href="index.html" style="font-size:40px; padding-top: 12px; font-weight: bold;">
+                    Study Buddies
+                </a>
+            </li>
+            <li><span onclick="openNav()" style="font-size:52px;text-decoration: bold;padding: 0px 36px; padding-right:0px">&#8801</span></li>
+        </ul>
+        <div id="mobileNav" class="overlay">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div class="overlay-content">
+                <a href="help.html">Help Us</a>
+                <a href="store.html">Store</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="content">
+        <div id="header">
+            <h1>My Profile</h1>
+            <p>
+                Tell us all about you so we can match <br>
+                you with your perfect study buddy!
+            </p>
+            <div class="g-signin2" data-onsuccess="loadData"
+                style="padding-left:100px;padding-top:30px">
+            </div>
+        </div>
+
+        <div>
+            <br><br><br>
+            <p id="fname_display">Please sign in to view your profile</p>
+            <br><br><br>
+            <form>
+                <table>
+                    <tr>
+                        <td>Username<sup>*</sup>: </td>
+                        <td><input type="text" placeholder="This is the name that will be displayed to your buddies"></td>
+                    </tr>
+                    <tr>
+                        <td>Graduation Year: </td>
+                        <td><input type="text" placeholder="e.g. 2022, 2025, etc."></td>
+                    </tr>
+                </table>
+            <br><br><br>
+            </form>
+        </div>
+
+        <div id="footer">
+            <br><br>
+            <div id="flex">
+                <p>
+                <a href="about.html">ABOUT</a>&nbsp|&nbsp
+                <a href="contact.html">CONTACT</a>&nbsp|&nbsp
+                <a href="help.html">DONATE</a>
+                </p>
+            </div>
+            <br><br>
+            <p style="font-size: 14px">&copy 2021 Lend A Paw and Team Too</p>
+            <br><br>
+        </div>
+    </div>
+
+</body>
+
+</html>

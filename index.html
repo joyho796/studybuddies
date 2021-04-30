@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Study Buddies</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Study, Chat, Friends, College, School">
+    <meta name="google-signin-client_id" content="231404018205-ns41e7jr23p8regdups02evhp9lk7iq0.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="index.html" style="margin:0px;padding:0px;text-align: center">
+                    <img src="images/logo2.png" alt="logo" style="padding-top: 20px;padding-bottom:20px;width: 250px; height: 55px;"></a>
+            </li>
+            <li><a href="index.html"style="background-color: rgba(62,169,223,0.1);font-weight: bold">Home</a></li>
+            <li id="signedIn" style="display: none"><a href="profile.html">Profile</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <div id="mobile">
+        <ul>
+            <li style="float: right">
+                <a href="index.html" style="padding-top:14px; padding-left: 0px">
+                    <img src="images/logo.png" alt="logo" style="width: 50px; height: 50px">
+                </a>
+            </li>
+            <li style="float: right;">
+                <a href="index.html" style="font-size:40px; padding-top: 12px; font-weight: bold;">
+                    Study Buddies
+                </a>
+            </li>
+            <li><span onclick="openNav()" style="font-size:52px;text-decoration: bold;padding: 0px 36px; padding-right:0px">&#8801</span></li>
+        </ul>
+        <div id="mobileNav" class="overlay">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div class="overlay-content">
+                <a href="help.html">Help Us</a>
+                <a href="store.html">Store</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="content">
+        <div id="header">
+            <h1>Study Buddies</h1>
+            <p>
+                Find motivation. Find focus. <br>
+                Find homework help. <br>
+                Find a new friend. <br>
+                Find your new study buddy today! <br>
+            </p>
+            <div class="g-signin2" data-onsuccess="onSignIn"
+                style="padding-left:100px;padding-top:30px">
+            </div>
+        </div>
+        <div>
+            <br><br><br>
+            <h2>Study with buddies</h2>
+            <br>
+            <p>We're here to help provid a virtual study partner experience. Sometimes we all need a little help keeping our focus, and a study buddy is the perfect way to help keep each other on track!</p>
+            <br>
+            <button onclick="document.location='help.html'">I want to lend a paw</button>
+        </div>
+        <div>
+            <br><br><br>
+            <h2>Adopt and Foster</h2>
+            <br>
+            <p>Adopting a pet or becoming a foster parent is a huge help to us, and is one of the many ways you can help out. Not only will you improve the life of the animal you take into your home, but you will free up our hands and space to take in more animals in need.</p>
+            <br>
+            <button onclick="document.location='animals.html'">See animals seeking a home</button>
+        </div>
+        <div>
+            <br><br><br>
+            <h2>Buy a Mystery Box</h2>
+            <br>
+            <p>We are holding a limited time mystery box event! Buy yourself or your paw friends a special gift, and help support the animals at our shelter at the same time.</p>
+            <br>
+            <button onclick="document.location='store.html'">Shop mystery boxes</button>
+            <br><br><br>
+        </div>
+        <div>
+            <br>
+            <h2><a href="events.html" style="text-decoration: none">Upcoming Events</a></h2>
+            <br><br>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                </tr>
+                <tr>
+                    <td>March 27th, 2021</td>
+                    <td>Taking Care of Orphaned Kittens<br>
+                        A seminar for those interested in fostering orphaned kittens and anyone who is eager to learn!
+                    </td>
+                </tr>
+                <tr>
+                    <td>March 30th, 2021</td>
+                    <td>Community TNR at the North End<br>
+                        Trap-Neuter-Return event to help control stray populations. Available to experienced and new helpers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>April 3rd, 2021</td>
+                    <td>Open House<br>
+                        Open house at our shelter for those looking to foster, adopt, or to simply come visit. A wonderful opportunity to come meet all the cute animals looking for a home.
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </div>
+
+        <div id="footer">
+            <br><br>
+            <div id="flex">
+                <p>
+                <a href="about.html">ABOUT</a>&nbsp|&nbsp
+                <a href="contact.html">CONTACT</a>&nbsp|&nbsp
+                <a href="help.html">DONATE</a>
+                </p>
+            </div>
+            <br><br>
+            <p style="font-size: 14px">&copy 2021 Lend A Paw and Team Too</p>
+            <br><br>
+        </div>
+    </div>
+
+</body>
+
+</html>
