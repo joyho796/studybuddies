@@ -7,6 +7,7 @@
 
 /* Text styling */
 body {
+    -webkit-appearance: none;
     font-family: Verdana;
     text-align: center;
     padding: 0px;
@@ -21,6 +22,9 @@ h1 {
     letter-spacing: 2px;
     font-variant-caps: all-small-caps;
     color: rgba(255,255,255,1);
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    line-height: 46px;
+    padding-bottom: 18px;
 }
 
 h2 {
@@ -72,6 +76,7 @@ div {
 
 #header p {
     color: rgba(255,255,255,1);
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
     font-size: 22px;
 }
 
@@ -94,8 +99,13 @@ div {
     align-items: center;
 }
 
+#filter {
+    text-align: center;
+}
+
 /* Navigation bar styling */
 ul {
+    z-index: 10;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
@@ -122,6 +132,10 @@ li a, li span {
     font-weight: bold;
 }
 
+img {
+    border-radius: 5px;
+}
+
 /* Table styling*/
 table {
     width: 80%;
@@ -140,7 +154,6 @@ td:nth-child(2) {
 th {
     text-align: left;
     padding-bottom: 10px;
-    text-shadow: 0px 0px 1px rgba(0,0,0,1);
 
 }
 
@@ -150,12 +163,10 @@ td {
     vertical-align: top;
 }
 
-img {
-    border-radius: 12px;
-}
 
 /* Form styling */
 button, #button {
+    -webkit-appearance: none;
     font-family: Verdana;
     font-size: 16px;
     background-color: rgba(37,115,184,1);
@@ -165,8 +176,8 @@ button, #button {
     border-radius: 26px;
     cursor: pointer;
     float: center;
-    transition: color 0.5s;
-    transition: background-color 0.5s;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover, #button:hover {
@@ -183,6 +194,7 @@ input[type=text], input[type=number] {
     font-size: 16px;
     padding: 7px 12px;
     border-style: none;
+    border-radius: 0px;
     border-bottom: 1px solid rgba(62,169,223,0.5);
     background-color: rgba(0,0,0,0);
     width: 90%;
@@ -202,22 +214,316 @@ input[type=text]:hover{
 
 input[type=text]:focus {
     width: 90%;
-    border-bottom: 2px solid rgba(37,115,184,1);
+    border-bottom: 1px solid rgba(37,115,184,1);
+}
+
+.container {
+    margin-left: 30%;
+    text-align: left;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    border-radius:5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: rgba(37,115,184,1);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+img[name=match] {
+        width:60%;
+    }
+
+/* Buddies Listing Styling */
+
+#chatToggle {
+    left:calc(180px + 30%);
+    position:fixed;
+    margin:12px;
+    font-size: 16px;
+    z-index:10;
+}
+
+#buddiesList {
+    z-index: 2;
+    width: 30%;
+    height: 100vh;
+    box-shadow: 8px 0px 8px rgba(0,0,0,0.03);
+    overflow-y:auto
+}
+
+#chatWindows {
+    z-index: 0;
+    width:70%;
+    height:100vh;
+    overflow-y:scroll;
+}
+
+.chatbox {
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 90px;
+    margin-top: 172px;
+    align-items: center;
+    overflow:scroll;
+}
+
+.buddySummary {
+    padding: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.buddySummary:hover {
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.buddySummary p {
+    font-size: 16px;
+    margin: 0px;
+}
+
+.buddyChat {
+    display:none;
+    width:100%;
+}
+
+.chatTime {
+    color: rgba(120,120,120,1);
+    font-size: 14px;
+    align-self: flex-start;
+    margin-left:36px;
+    margin-bottom:2px;
+    margin-top:14px;
+}
+
+.chatTextSelf p, .chatTextOther p{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.chatTextSelf, .chatTextOther {
+    word-wrap: break-word;
+    height: 34px;
+    margin-top: 18px;
+    margin-left: 26px;
+    margin-right: 26px;
+    margin-top:0px;
+    margin-bottom: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: left;
+    max-width: 60%;
+    height: max-content;
+    border-radius: 26px;
+    background-color: rgba(0,0,0,0);
+    display: inline-block;
+}
+
+.chatTextSelf {
+    background-color: rgba(62,169,223,0.5);
+    align-self: flex-start;
+}
+
+.chatTextOther {
+    background-color: rgba(0,0,0,0.1);
+    align-self: flex-start;
+}
+
+.topBar {
+    background-color: rgba(255,255,255,1);
+    position: fixed;
+    top: 0;
+    text-align: left;
+    padding: 24px;
+    width:calc(70% - 220px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.chatInput {
+    z-index: 150;
+    height: 72px;
+    position: fixed;
+    -webkit-appearance: none;
+    bottom: 0px;
+    background-color: rgba(255,255,255,1);
+    color: rgba(89,89,89,1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    width: calc(70vw - 170px);
+}
+
+.chatInput input[type=text] {
+    z-index: 150;
+    -webkit-appearance: none;
+    margin: 12px;
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 36px;
+    border: 1px solid rgba(62,169,223,0.5);
+    background-color: rgba(0,0,0,0);
+    width:86%;
+    outline: none;
+    transition: 0.3s;
+}
+
+.chatInput input[type=text]:focus {
+    border: 1px solid rgba(37,115,184,1);
     color: rgba(89,89,89,1);
 }
 
 /* Overlay Nagivation Styling */
 
 @media only screen and (max-width: 940px) {
+    .container{
+        margin-left: 10%;
+    }
+    img[name=match] {
+        width:90%;
+    }
     #nav {
         display: none;
     }
+    #chatToggle{
+        display:none;
+        top:12px;
+        left:12px;
+        margin:0px;
+    }
     #mobile {
-        display: block;
+        z-index: 100;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        bottom:0px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 2px;
+        justify-content: space-between;
+        width:calc(100% - 16px);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        background-color: rgba(255,255,255,1);
+    }
+
+    #mobile a {
+        padding:16px;
+    }
+    #mobile img {
+        width: 28px;
+    }
+
+    h1 {
+        text-align: left;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    #header p {
+        text-align: left;
+        padding-left: 8%;
+        padding-right: 8%;
+        margin: 0px;
+    }
+
+    #header .g-signin2 {
+        padding-left:8%;
+        padding-right:8%;
+        padding-top:30px;
+    }
+    #buddiesList{
+        width:100%;
+    }
+    #chatWindows{
+        width: 0%
+    }
+    .chatInput input[type=text] {
+        -webkit-appearance: none;
+        width: 75vw;
+    }
+    #buddiesList{
+        width: 100%;
+    }
+    #chatWindows{
+        width:0%;
+    }
+    .topBar{
+        width:100vw;
+    }
+    .chatInput{
+        width:100vw;
+    }
+    ul {
+
     }
 }
 
 @media only screen and (min-width: 940px) {
+
     h1 {
         text-align: left;
         padding-left: 100px;
@@ -227,6 +533,12 @@ input[type=text]:focus {
         padding-left: 100px;
         margin: 0px;
     }
+
+    #header .g-signin2 {
+        padding-left:100px;
+        padding-top:30px;
+    }
+
     ul {
         background-color: rgba(37,115,184,0);
         box-shadow: 0px 0px 18px rgba(0,0,0,0.1);
@@ -247,7 +559,7 @@ input[type=text]:focus {
         display: none;
     }
     #content {
-      margin-left: 250px;
+        margin-left: 250px;
     }
 }
 
@@ -255,7 +567,7 @@ input[type=text]:focus {
     height: 100%;
     width: 0%;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     background-color: rgba(255,255,255,0.9);
